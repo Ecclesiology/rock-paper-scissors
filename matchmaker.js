@@ -1,9 +1,9 @@
  const input = document.querySelector(".playerSelection");
  const para = document.querySelector("p");
  const aggressorDiv = document.createElement("div");
- const aggressor = document.querySelector("#losing");
+ const aggressor = document.querySelector("#compChoice");
  const scoreDiv = document.createElement("div");
- const score = document.querySelector("#winning");
+ const score = document.querySelector("#scoreKeeper");
  let It = 0;
  let You = 0;
 
