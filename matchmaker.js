@@ -1,4 +1,3 @@
- //Variables attatched to the HTML to allow the displaying of the results in the HTML.
  const input = document.querySelector(".playerSelection");
  const para = document.querySelector("p");
  const aggressorDiv = document.createElement("div");
@@ -8,12 +7,8 @@
  let It = 0;
  let You = 0;
 
- //Upon input from the user, the choice from the user is concatecated with 
- //the computer's to test victory or loss.
- //The alerts display the results of the test, the increments increase the displayed scores, 
- //and the textContents record values. 
 input.onchange = function playRound() {
-    const playerSelection = input.value
+    const playerSelection = input.value.toLowerCase()
     const computerSelection = computerPlay()
     aggressor.textContent = computerPlay()
     aggressor.appendChild(aggressorDiv)
@@ -59,21 +54,14 @@ input.onchange = function playRound() {
     }
 }
 
-//The automated opponent chooses randomly from a range of 80 to 10.
-//The Math.random function was displaying one answer
-//before execution yet another after execution.
-
-//This lead to a less than satisfying results in the switch function,
-//causing a win when it should've been a tie, and a loss when it was to be a win
-//Thus, after much testing, I left it alone, as I couldn't seem to fix it.
 function computerPlay() {
         let number = Math.floor( Math.random() * ( 80 - 10 ) + 10 )
           if ( number < 34 ) {
-              return "Paper!"
+              return "Paper!";
           } else if ( number > 65 ) {
-              return "Scissors!"
+              return "Scissors!";
           } else { 
-              return "Rock!"
+              return "Rock!";
           }
 }
 
