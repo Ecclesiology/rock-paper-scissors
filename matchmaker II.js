@@ -77,4 +77,8 @@ const Paper = document.createElement("button");
   Paper.textContent = "Paper";
   buttonContainer.appendChild(Paper);
   
-const
+const Scissors = document.createElement("button");
+  Scissors.classList.add("Scissors");
+  Scissors.textContent = "Scissors";
+  buttonContainer.appendChild(Scissors);
+  
