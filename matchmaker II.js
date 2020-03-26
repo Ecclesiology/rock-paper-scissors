@@ -71,3 +71,10 @@ const Rock = document.createElement("button");
   Rock.classList.add("Rock");
   Rock.textContent = "Rock";
   buttonContainer.appendChild(Rock);
+  
+const Paper = document.createElement("button");
+  Paper.classList.add("Paper");
+  Paper.textContent = "Paper";
+  buttonContainer.appendChild(Paper);
+  
+const
