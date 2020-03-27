@@ -8,7 +8,6 @@
  let You = 0;
 
   function playRound() {
-    const playerSelection = input.value.toLowerCase()
     const computerSelection = computerPlay()
     aggressor.textContent = computerPlay()
     aggressor.appendChild(aggressorDiv)
@@ -69,20 +68,21 @@ const buttonContainer = document.querySelector(".buttonContainer");
   
 const rock = document.createElement("button");
   rock.classList.add("rock");
-  rock.textContent = "Rock";
-  rock.addEventListener("click" , playRound );
+  rock.textContent = "rock";
+  rock.addEventListener("click" , playRound);
   buttonContainer.appendChild(rock);
   
 const paper = document.createElement("button");
   paper.classList.add("paper");
-  paper.textContent = "Paper";
-  paper.addEventListener("click" , playRound );
+  paper.textContent = "paper";
+  paper.addEventListener("click" , playRound);
   buttonContainer.appendChild(paper);
   
 const scissors = document.createElement("button");
   scissors.classList.add("scissors");
-  scissors.textContent = "Scissors";
-  scissors.addEventListener("click" , playRound);
+  scissors.textContent = "scissors";
+  scissors.addEventListener("click" , () => {
+     playerSelection = document.getElementsByClassName("scissors");
+  });
   buttonContainer.appendChild(scissors);
-
  
