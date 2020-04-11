@@ -4,11 +4,12 @@
  const aggressor = document.querySelector("#compChoice");
  const scoreDiv = document.createElement("div");
  const score = document.querySelector("#scoreKeeper");
+ let playerSelection = "";
+ let computerSelection = "";
  let It = 0;
  let You = 0;
 
   function playRound() {
-    const computerSelection = computerPlay()
     aggressor.textContent = computerPlay()
     aggressor.appendChild(aggressorDiv)
     switch( playerSelection + computerSelection ) { 
@@ -67,22 +68,32 @@ function computerPlay() {
 const buttonContainer = document.querySelector(".buttonContainer");
   
 const rock = document.createElement("button");
-  rock.classList.add("rock");
-  rock.textContent = "rock";
-  rock.addEventListener("click" , playRound);
+  rock.classList.add("Rock");
+  rock.textContent = "Rock";
+  rock.addEventListener("click" , (e) => {
+      playerSelection = "rock";
+      computerSelection = computerPlay();
+      playRound(playerSelection , computerSelection);
+  });
   buttonContainer.appendChild(rock);
   
 const paper = document.createElement("button");
-  paper.classList.add("paper");
-  paper.textContent = "paper";
-  paper.addEventListener("click" , playRound);
+  paper.classList.add("Paper");
+  paper.textContent = "Paper";
+  paper.addEventListener("click" , (e) => {
+      playerSelection = "paper";
+      computerSelection = computerPlay();
+      playRound(playerSelection , computerSelection);
+  });
   buttonContainer.appendChild(paper);
   
 const scissors = document.createElement("button");
-  scissors.classList.add("scissors");
-  scissors.textContent = "scissors";
-  scissors.addEventListener("click" , () => {
-     playerSelection = document.getElementsByClassName("scissors");
+  scissors.classList.add("Scissors");
+  scissors.textContent = "Scissors";
+  scissors.addEventListener("click" , (e) => {
+     playerSelection = "scissors"
+     computerSelection = computerPlay();
+     playRound(playerSelection, computerSelection);
   });
   buttonContainer.appendChild(scissors);
  
