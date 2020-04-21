@@ -68,32 +68,46 @@ function computerPlay() {
 const buttonContainer = document.querySelector(".buttonContainer");
   
 const rock = document.createElement("button");
-  rock.classList.add("Rock");
+  rock.classList.add("Choice");
   rock.textContent = "Rock";
   rock.addEventListener("click" , (e) => {
       playerSelection = "rock";
       computerSelection = computerPlay();
+      rock.currentTime = 0;
+      rock.classList.add("pressing");
       playRound(playerSelection , computerSelection);
   });
   buttonContainer.appendChild(rock);
   
 const paper = document.createElement("button");
-  paper.classList.add("Paper");
+  paper.classList.add("Choice");
   paper.textContent = "Paper";
   paper.addEventListener("click" , (e) => {
       playerSelection = "paper";
       computerSelection = computerPlay();
+      paper.currentTime = 0;
+      paper.classList.add("pressing");
       playRound(playerSelection , computerSelection);
   });
   buttonContainer.appendChild(paper);
   
 const scissors = document.createElement("button");
-  scissors.classList.add("Scissors");
+  scissors.classList.add("Choice");
   scissors.textContent = "Scissors";
   scissors.addEventListener("click" , (e) => {
      playerSelection = "scissors"
      computerSelection = computerPlay();
+     scissors.currentTime = 0;
+     scissors.classList.add("pressing");
      playRound(playerSelection, computerSelection);
   });
   buttonContainer.appendChild(scissors);
- 
+  
+  function removeTransition(e) {
+    if(e.propertyName !== "transform") return;
+    this.classList.remove("pressing");
+    }
+
+const buttons = document.querySelectorAll("button");
+  buttons.forEach(button => button.addEventListener("transitionend" , removeTransition));
+  
